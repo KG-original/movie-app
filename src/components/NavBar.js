@@ -7,7 +7,7 @@ function NavBar() {
             <div className="container">
               <div className="navbar-header">
                 <div className="navbar-brand text-white brand-text" to="/">
-                  80's Top 5 Movies
+                  <b>80's</b> Top 5 Movies
                 </div>
               </div>
               <div style={sortStyle} className="navbar-nav ml-auto text-light d-inline-block"><SortOptions/></div>
@@ -21,13 +21,14 @@ const navStyle = {
   zIndex: '100',
   width: '100%',
   background: '#ff4d4d',
-  boxShadow:'0px 1px 1px #000000'
+  boxShadow:'0px 1px 1px #000000',
 
 }
 
 const sortStyle = {
-  marginRight: '70px',
-  marginBottom: '25px'
+  paddingBottom: '18px',
+  paddingRight: '215px'
+
 }
 
 export default NavBar;

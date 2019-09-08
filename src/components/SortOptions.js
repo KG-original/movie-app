@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {refreshList} from './MovieList'
+import {refreshList} from './MovieList';
+import ReactDOM from 'react-dom';
 
 export class SortOptions extends Component {
     constructor(props){
@@ -37,13 +38,13 @@ export class SortOptions extends Component {
                 <div onClick={() => this.orderBy(type.valueToOrderBy, type.label)} className="dropdown-item" key={key}>{type.label}</div>
             );
         return (
-            <div style={dropConatiner} className="dropdown-container">
+            <div id= "ordertypes" style={dropConatiner} className="dropdown-container">
                 <div style={sortStyle} className="dropdown">
-                <div className="dropdown-toggle" data-toggle="dropdown">Order By {this.selectedOrder}</div>
-                <div className="dropdown-menu">
-                {content}
+                    <div className="dropdown-toggle" data-toggle="dropdown">Order By {this.selectedOrder}</div>
+                    <div className="dropdown-menu">
+                    {content}
+                    </div>
                 </div>
-            </div>
             </div>
         )
     }
@@ -57,6 +58,10 @@ const sortStyle = {
 const dropConatiner = {
     position:'relative',
     cursor: 'pointer'
+}
+
+export function refreshSortOptions(props){
+    ReactDOM.render(<SortOptions />, document.getElementById("ordertypes"));
 }
 
 const mapStateToProps = state => ({

@@ -2,15 +2,13 @@ import React from 'react'
 
 function Footer() {
     return (
-        <div>
-            <div style={footerstyle} className="row">
-                <div className="col-md-12">
-                    <div className="footer p-3  text-center text-light">
-                        Developed By:
-                        <span className="text-warning font-weight-normal"> Kgalalelo Jannie
-                        </span>
-                        , Using <span className="fab fa-react"></span> React JS &amp; Redux JS
-                    </div>
+        <div style={footerstyle}>
+            <div className="col-md-12">
+                <div className="footer p-3  text-center text-light">
+                    Developed By:
+                    <span className="text-warning font-weight-normal"> Kgalalelo Jannie
+                    </span>
+                    , Using <i className="fab fa-react"></i> React JS &amp; Redux JS
                 </div>
             </div>
         </div>
@@ -18,8 +16,13 @@ function Footer() {
 }
 
 const footerstyle = {
-    color: '#ffffff',
-    background: '#000000'
+    position: 'fixed',
+    left: '0',
+    bottom: '0',
+    width: '100%',
+    background: '#FF1919',
+    color: 'white',
+    textAlign: 'center',
 }
 
 export default Footer

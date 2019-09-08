@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import fetchMovies from '../actions/fetchAction';
 import {connect} from 'react-redux';
 import MovieCard from './MovieCard';
-import Movie from './Movie';
-import Rodal from 'rodal';
 import ReactDOM from 'react-dom';
+import { refreshSortOptions } from './SortOptions'
 
 // include styles
 import 'rodal/lib/rodal.css';
@@ -28,17 +27,17 @@ export class MovieList extends Component {
     render() {
         const movies = window.sessionStorage.getItem('Movies') ? JSON.parse(window.sessionStorage.getItem('Movies')) : this.props.movies; 
         if(!window.sessionStorage.getItem('Movies')  && movies.movies) window.sessionStorage.setItem('Movies', JSON.stringify(movies));
-        if(!window.sessionStorage.getItem('OrderTypes') && movies.movies ) window.sessionStorage.setItem('OrderTypes', JSON.stringify(movies.ordertypes));
+        if(!window.sessionStorage.getItem('OrderTypes') && movies.movies ){
+            window.sessionStorage.setItem('OrderTypes', JSON.stringify(movies.ordertypes));
+            refreshSortOptions(this.props);
+        } 
         let content = '';
         if (movies.movies)
-            content = movies.movies.length > 0 ? movies.movies.map((movie, index) => <div className="row" onClick={() => this.show(movie)}><MovieCard key={index} movie={movie}/></div>) : null;
+            content = movies.movies.length > 0 ? movies.movies.map((movie, index) => <MovieCard key={index} movie={movie}/>) : null;
         else
-            content = movies.length > 0 ? movies.map((movie, index) =>  <div style={listStyle} ><MovieCard key={index} movie={movie}/></div>) : null;
+            content = movies.length > 0 ? movies.map((movie, index) =>  <div ><MovieCard key={index} movie={movie}/></div>) : null;
         return (
-            <div id= "movielist" className="container">
-                <Rodal style={modalStyle} visible={this.state.visible} onClose={this.hide.bind(this)}>
-                    <Movie/>
-                </Rodal>
+            <div style={listStyle} id= "movielist" className="container">
                 {content}
             </div>
              
@@ -46,13 +45,8 @@ export class MovieList extends Component {
     }
 }
 
-const modalStyle = {
- width: '100% !important',
- height: '100% !important',
-}
-
 const listStyle = {
-    paddingTop: '200px',
+    paddingTop: '85px',
 }
 
 export function refreshList(props){
@@ -63,6 +57,6 @@ const mapStateToProps = state => ({
     movies: state.movies.movies
 })
 
- export default connect(mapStateToProps)(MovieList);
+export default connect(mapStateToProps)(MovieList);
 
 

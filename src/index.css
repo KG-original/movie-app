@@ -6,11 +6,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #1f1f1f!important;
+  background: #000000!important;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+div.rodal-dialog {
+  padding: unset !important;
+  bottom: unset !important;
+  border-radius: 15px !important;
+}
+
 
