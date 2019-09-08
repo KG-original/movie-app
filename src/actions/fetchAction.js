@@ -11,14 +11,6 @@ export const fetchMovies = (dispatch) => {
     }))
     .catch(err => console.log(err));
     
-}
-//fetch movies must run and attach to state
-//create movie component
-//current movie must show in state of movie
-//Display list
-//Click on list and display modal
-//sort fucntionality
-//load functionality
-//store data locally after doing the first call 
+} 
 
 export default fetchMovies;

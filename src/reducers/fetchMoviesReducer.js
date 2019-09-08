@@ -2,8 +2,6 @@ import {TOP_5_MOVIES} from '../actions/types';
 
 const initialState = {
     movies : [],
-    movie: [],
-    loading : false
 }
 
 export default function(state = initialState, action){ 
@@ -12,7 +10,6 @@ export default function(state = initialState, action){
             return {
                 ...state,
                 movies: action,
-                loading: false
             }
         default: 
             return state
