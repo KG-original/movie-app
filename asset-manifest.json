@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/KG-original/movie-app/static/css/main.6c2b8b99.chunk.css",
+    "main.js": "/KG-original/movie-app/static/js/main.3d52af9d.chunk.js",
+    "main.js.map": "/KG-original/movie-app/static/js/main.3d52af9d.chunk.js.map",
+    "runtime~main.js": "/KG-original/movie-app/static/js/runtime~main.3c768d5c.js",
+    "runtime~main.js.map": "/KG-original/movie-app/static/js/runtime~main.3c768d5c.js.map",
+    "static/css/2.4364cc03.chunk.css": "/KG-original/movie-app/static/css/2.4364cc03.chunk.css",
+    "static/js/2.fd1c1807.chunk.js": "/KG-original/movie-app/static/js/2.fd1c1807.chunk.js",
+    "static/js/2.fd1c1807.chunk.js.map": "/KG-original/movie-app/static/js/2.fd1c1807.chunk.js.map",
+    "index.html": "/KG-original/movie-app/index.html",
+    "precache-manifest.d8df1b68a2516f1e46d73577afa3a136.js": "/KG-original/movie-app/precache-manifest.d8df1b68a2516f1e46d73577afa3a136.js",
+    "service-worker.js": "/KG-original/movie-app/service-worker.js",
+    "static/css/2.4364cc03.chunk.css.map": "/KG-original/movie-app/static/css/2.4364cc03.chunk.css.map",
+    "static/css/main.6c2b8b99.chunk.css.map": "/KG-original/movie-app/static/css/main.6c2b8b99.chunk.css.map"
+  }
+}
